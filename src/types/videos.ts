@@ -14,6 +14,7 @@ export interface VideoProject {
   duration?: string;
   software_used?: string[];
   is_instagram_reel: boolean;
+  is_google_drive?: boolean;
 }
 
 export interface Client {

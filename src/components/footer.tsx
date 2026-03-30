@@ -65,25 +65,25 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-4 text-sm font-medium">
               <Link
                 href="/"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 transform"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 transform"
               >
                 About
               </Link>
               <Link
                 href="/skills"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 transform"
               >
                 Skills
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:translate-x-1 transform"
               >
                 Contact
               </Link>
@@ -107,8 +107,8 @@ export default function Footer() {
                     className="group"
                     aria-label={link.name}
                   >
-                    <div className="p-3 rounded-full bg-white/5 border border-white/10 group-hover:bg-blue-600/20 group-hover:border-blue-500/50 transition-all duration-300">
-                      <Icon size={20} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
+                    <div className="p-3 rounded-full bg-white/5 border border-white/10 group-hover:bg-blue-600/20 group-hover:border-blue-500/50 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300 group-hover:scale-110 transform">
+                      <Icon size={20} className="text-gray-400 group-hover:text-blue-400 transition-colors duration-300" />
                     </div>
                   </a>
                 );
@@ -122,12 +122,12 @@ export default function Footer() {
             Made with{" "}
             <Heart className="text-red-500 fill-red-500/20" size={14} /> by{" "}
             <a
-              href="https://frost-tech-portfolio.vercel.app/"
+              href="https://www.instagram.com/hruthik__offcl?igsh=bTZ0bHJmeDV0ZjF0"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors underline decoration-dotted underline-offset-4"
+              className="text-gray-400 hover:text-blue-400 transition-colors underline decoration-dotted underline-offset-4"
             >
-              Frost Tech
+              Hruthik
             </a>{" "}
             © {currentYear}
           </p>

@@ -123,13 +123,43 @@ export const getVideoEmbedUrl = (project: VideoProject): string | null => {
 export const getVideoThumbnailUrl = (project: VideoProject): string => {
   // Handle Instagram Reels
   if (project.is_instagram_reel) {
-    // For Instagram reels, we'll use a placeholder since Instagram doesn't provide direct thumbnail access
-    // You could replace this with a custom thumbnail image
-    return "/instagram-placeholder.jpg"; // Add this image to your public folder
+    // Use Instagram logo as cover image for Instagram reels
+    return "/instagram-logo.png"; // Add this image to your public folder
+  }
+
+  // Handle Google Drive Videos
+  if (project.is_google_drive) {
+    // Use Google Drive logo as cover image for Google Drive videos
+    return "/google-drive-logo.png"; // Add this image to your public folder
   }
 
   // Handle YouTube videos
   return `https://img.youtube.com/vi/${project.cover_image}/maxresdefault.jpg`;
+};
+
+// Helper function to get platform info for a video project
+export const getVideoPlatformInfo = (project: VideoProject): { platform: string; buttonText: string; icon: string } => {
+  if (project.is_instagram_reel) {
+    return {
+      platform: "instagram",
+      buttonText: "Watch on Instagram",
+      icon: "instagram",
+    };
+  }
+
+  if (project.is_google_drive) {
+    return {
+      platform: "gdrive",
+      buttonText: "Open on GDrive",
+      icon: "gdrive",
+    };
+  }
+
+  return {
+    platform: "youtube",
+    buttonText: "Watch on YouTube",
+    icon: "youtube",
+  };
 };
 
 // Legacy support - keep the old structure for backward compatibility if needed

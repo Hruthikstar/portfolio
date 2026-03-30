@@ -205,20 +205,20 @@ export default function AboutPage() {
 
           <div
             className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-10"
-            style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
+            style={{ maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)' }}
           >
-            <Marquee className="[--duration:20s]">
+            <Marquee className="[--duration:30s]" pauseOnHover={false}>
               {clientsData.map((client) => (
-                <div key={client.id} className="mx-8 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 cursor-pointer">
-                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-white/5 p-4 flex items-center justify-center shadow-sm hover:shadow-md hover:bg-white/10 transition-all">
+                <div key={client.id} className="mx-8 flex flex-col items-center justify-center transition-all duration-500 opacity-75 hover:opacity-100 cursor-pointer will-change-opacity group">
+                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-white/5 p-4 flex items-center justify-center shadow-sm group-hover:shadow-xl group-hover:shadow-blue-500/20 hover:bg-white/15 transition-all duration-300 group-hover:scale-110 transform">
                     <Image
                       src={client.logo}
                       alt={client.name}
                       fill
-                      className="object-contain"
+                      className="object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <p className="mt-3 text-xs font-medium text-gray-400 group-hover:text-gray-200 transition-colors text-center whitespace-nowrap">
+                  <p className="mt-3 text-xs font-medium text-gray-400 group-hover:text-blue-300 transition-colors duration-300 text-center whitespace-nowrap">
                     {client.name}
                   </p>
                 </div>
